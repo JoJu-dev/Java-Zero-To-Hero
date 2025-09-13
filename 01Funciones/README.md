@@ -12,10 +12,10 @@
 
 #### Descripción de Ejercicios:
 
-- `Errores de compilacion o ejecucion`: Escribir los códigos, leer e interpretar los errores en ejecunción y luego ejecutar de forma correcta archivo  
+ 
 | Titulo | Descripción | Nombre del Archivo |
 |--------|-------------|--------------------|
-| :Errores de compilacion o ejecucion: | :Leer e interpretar los errores en ejecunción y luego ejecutar: :Errores_Compilacion_Ejecucion:|
-| :Ejercicios de codificación: | Interpretar y ejecutar los ejercicios con su solución: | :Ejercicios_Codificacion: |  
-| :Ejercicios de corrección de Código: | :Revisa el código y ejecutalo con su respectiva correción: |:Correccion_Codigo:|
+| Errores de compilacion o ejecucion | Leer e interpretar los errores en ejecunción y luego ejecutar|Errores_Compilacion_Ejecucion|
+| Ejercicios de codificación | Interpretar y ejecutar los ejercicios con su solución | Ejercicios_Codificacion |  
+| Ejercicios de corrección de Código| Revisa el código y ejecutalo con su respectiva correción |Correccion_Codigo|
 
