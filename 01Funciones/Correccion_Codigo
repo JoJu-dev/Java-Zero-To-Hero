@@ -1,0 +1,8 @@
+String adornar(String frase){
+    return String.format("<=%s=>",frase);
+}
+adornar("Java")
+String concatenar(String s1, String s2){
+    return String.format("[%s+%s]", s1,s2);
+}
+concatenar("Hola","Mundo")
