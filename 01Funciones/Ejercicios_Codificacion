@@ -1,21 +1,21 @@
-String adivinaLaPelicula(String emogi1,String emogi2, String emogi3){
-    return String.format("[%s,%s,%s]",emogi1,emogi2,emogi3);
+String adivinaLaPelicula( String emogi1, String emogi2, String emogi3 ) {
+    return String.format("[%s,%s,%s]", emogi1,emogi2,emogi3);
 }
 adivinaLaPelicula("emogi1","emogi2","emogi3")
-String konnichiwa(String dare){
-    return String.format("こんにちは %s",dare);
+String konnichiwa( String dare ) {
+    return String.format("こんにちは %s", dare);
 }
 konnichiwa("Mundo")
-String separador(){
+String separador() {
     return "<<<>>>";
 }
 separador()
-String vocales(){
+String vocales() {
     return "aeiou";
 }
 vocales()
-String tituloAdornado(String titulo){
-    return String.format("<<< %s >>>",titulo);
+String tituloAdornado( String titulo ) {
+    return String.format("<<< %s >>>", titulo);
 }
 tituloAdornado("Java")
 tituloAdornado("A + B")
