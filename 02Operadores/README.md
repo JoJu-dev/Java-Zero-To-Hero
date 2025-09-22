@@ -3,14 +3,14 @@
  
 | Titulo | Descripción | Nombre del Archivo |
 |--------|-------------|--------------------|
-| Errores de compilacion o ejecucion | Leer e interpretar los errores en ejecunción y luego ejecutar|[ErroresCompilador_ejecución](https://github.com/JoJu-dev/Java-Zero-To-Hero/blob/02Operadores/02Operadores/ErroresCompilador_ejecuci%C3%B3n) |
+| Errores de compilación o ejecución | Leer e interpretar los errores en ejecunción y luego ejecutar|[ErroresCompilador_ejecución](https://github.com/JoJu-dev/Java-Zero-To-Hero/blob/02Operadores/02Operadores/ErroresCompilador_ejecuci%C3%B3n) |
 | Ejercicios de codificación | Interpretar y ejecutar los ejercicios con su solución | [Ejercicio_Codificacion](https://github.com/JoJu-dev/Java-Zero-To-Hero/blob/02Operadores/02Operadores/Ejercicio_Codificacion) |  
-| Ejercicios de corrección de Código| Revisa el código y ejecutalo con su respectiva correción |[Correccion_Codigo](https://github.com/JoJu-dev/Java-Zero-To-Hero/blob/02Operadores/02Operadores/Correccion_Codigo)|
+| Ejercicios de corrección de Código| Revisa el código y ejecútalo con su respectiva correción |[Correccion_Codigo](https://github.com/JoJu-dev/Java-Zero-To-Hero/blob/02Operadores/02Operadores/Correccion_Codigo)|
 
 
 # Notas:  Operadores :hamburger:
 
-- `Math.sqrt()`: Función para calcula la raíz cuadrada de un número, Recibe un double y retorna un double.
+- `Math.sqrt()`: Función para calcular la raíz cuadrada de un número, Recibe un double y retorna un double.
 ``` java
  int numero = 2;
  int cuadrado = Math.sqrt(numero); 
