@@ -84,16 +84,10 @@ validar(2,1,2)
 validar(0,3,3)
 validar(1,3,5)
 double tarifa( int minutos ) {
-    return minutos * 10.0;
-}
-double cobroMinimo( int minutos ) {
-    return ( tarifa(minutos) >= 100 ) ? tarifa(minutos) : 100.0;
-}
-double cobroMaximo( int minutos ) { 
-    return ( tarifa(minutos) >= 3_000 ) ? 3_000.0 : cobroMinimo(minutos);
+    return ( double ) minutos * 10.0;
 }
 double cobro( int minutos ) {
-    return cobroMaximo(minutos);
+    return Math.max(100.0, Math.min(tarifa(minutos),3_000.0));
 }
 cobro(1)
 cobro(10)
