@@ -1,12 +1,12 @@
-int multiplicacion( int numero1, int numero2 ) {
-    return numero1 * numero2;
+int multiplicación( int número1, int número2 ) {
+    return número1 * número2;
 }
-multiplicacion( 2, 2)
-int suma( int numero1, int numero2 ) {
-    return numero1 + numero2;
+multiplicación( 2, 2)
+int suma( int número1, int número2 ) {
+    return número1 + número2;
 }
 suma( 2, 2)
-boolean positivoMenorDe20(int numero) {
-    return numero > 0 && numero < 20;
+boolean positivoMenorDe20(int número) {
+    return ( número > 0 ) && ( número < 20 );
 }
 positivoMenorDe20(15)
