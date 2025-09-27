@@ -51,12 +51,6 @@ esPar(4)
 esImpar(4)
 esImpar(2)
 esImpar(13)
-int diferencia(int a, int b) {
-    return a - b;
-}
-int suma(int a, int b) {
-    return a + b;
-}
 diferenciaDeCuadrados(3, 2)
 diferenciaDeCuadrados(1,1)
 diferenciaDeCuadrados(0,0)
@@ -64,7 +58,7 @@ diferenciaDeCuadrados(1,1)
 diferenciaDeCuadrados(3,2)
 diferenciaDeCuadrados(3,0)
 int diferenciaDeCuadrados( int a, int b ) {
-    return  diferencia(a, b) * suma(a, b);
+    return  (( a * a ) - ( b * b ));
 }
 diferenciaDeCuadrados(3,2)
 diferenciaDeCuadrados(1,1)
