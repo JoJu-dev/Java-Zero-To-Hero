@@ -69,7 +69,7 @@ tercerÁngulo(60.0, 60.0)
 tercerÁngulo(45.0, 90.0)
 tercerÁngulo(35.0, 50.0)
 boolean validarMúltiploDe7( int n ) {
-return ( (n / 7 ) > 0 ) && ( ( n / 7 ) < 1_000 );
+return ( n > 0 ) && ( ( n % 7 ) == 0) && ( n < 1_000);
 }
 validarMúltiploDe7(-7)
 validarMúltiploDe7(0)
