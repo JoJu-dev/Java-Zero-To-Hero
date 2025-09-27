@@ -6,29 +6,29 @@ truncado(123)
 truncado(456)
 truncado(9)
 truncado(0)
-int ultimoDigito( int n ) {
+int últimoDígito( int n ) {
     return n % 10;
 }
-ultimoDigito(123)
-ultimoDigito(456)
-ultimoDigito(9)
-ultimoDigito(0)
-unicoDigito(0)
-unicoDigito(1)
-unicoDigito(5)
-unicoDigito(9)
-unicoDigito(10)
-unicoDigito(88)
-boolean unicoDigito( int n ) {
+últimoDígito(123)
+últimoDígito(456)
+últimoDígito(9)
+últimoDígito(0)
+últimoDígito(0)
+últimoDígito(1)
+últimoDígito(5)
+últimoDígito(9)
+últimoDígito(10)
+últimoDígito(88)
+boolean únicoDígito( int n ) {
     return ( n >= 0 ) && ( n < 10 );
 }
-unicoDigito(88)
-unicoDigito(10)
-unicoDigito(10)
-unicoDigito(9)
-unicoDigito(8)
-unicoDigito(1)
-unicoDigito(0)
+únicoDígito(88)
+únicoDígito(10)
+únicoDígito(10)
+únicoDígito(9)
+únicoDígito(8)
+únicoDígito(1)
+únicoDígito(0)
 String signo( int n ) {
     return ( n >= 0 ) ? "no_negativo" : "negativo";
 }
@@ -68,19 +68,19 @@ int diferenciaDeCuadrados( int a, int b ) {
 }
 diferenciaDeCuadrados(3,2)
 diferenciaDeCuadrados(1,1)
-double tercerAngulo( double a, double b) {
+double tercerÁngulo( double a, double b) {
     return 180 - (a + b);
 }
-tercerAngulo(60.0, 60.0)
-tercerAngulo(45.0, 90.0)
-tercerAngulo(35.0, 50.0)
-boolean validarMultiploDe7( int n ) {
+tercerÁngulo(60.0, 60.0)
+tercerÁngulo(45.0, 90.0)
+tercerÁngulo(35.0, 50.0)
+boolean validarMúltiploDe7( int n ) {
 return ( (n / 7 ) > 0 ) && ( ( n / 7 ) < 1_000 );
 }
-validarMultiploDe7(-7)
-validarMultiploDe7(0)
-validarMultiploDe7(91)
-validarMultiploDe7(9100)
+validarMúltiploDe7(-7)
+validarMúltiploDe7(0)
+validarMúltiploDe7(91)
+validarMúltiploDe7(9100)
 boolean validar( int inicio, int mitad, int tamano) {
     return ( inicio >= 0 ) && ( inicio < mitad ) && ( mitad < tamano);
 }
