@@ -1,0 +1,107 @@
+int mod(int p, int q) {
+    var d = p / q;
+    var r = d * q;
+    var m =  p - r;
+    return m;
+}
+mod(2,2)
+mod(2,4)
+mod(4,4)
+mod(4,1)
+mod(4,2)
+mod(4,3)
+mod(4,6)
+mod(4,8)
+mod(4,10)
+mod(3,2)
+mod(4,2)
+diferenciaDeCuadrados(3,4)
+int diferenciaDeCuadrados(int a, int b) {
+    var cuadradoDeA = a * a;
+    var cuadradoDeB = b * b;
+    var diferenciaDeCuadrados = cuadradoDeA - cuadradoDeB;
+    return diferenciaDeCuadrados;
+}
+diferenciaDeCuadrados(3,4)
+diferenciaDeCuadrados(2,2)
+distancia(0.0,0.0,1.0,1.0)
+distancia(0.0,0.0,1.0,1.0)
+double distancia(double x1, double y1, double x2, double y2) {
+    var coordenadasPrimerPunto = Math.pow((x2 - x1),2);
+    var coordenadasSegundoPunto = Math.pow((y2 - y1),2);
+    var d = Math.sqrt((coordenadasPrimerPunto + coordenadasSegundoPunto));
+    return d;
+}
+distancia(0.0,0.0,1.0,1.0)
+distancia(0.0,3.0,4.0,0.0)
+distancia(0.0,3.0,4.0,0.0)
+double fahrenheitACelsius(double F) { 
+    var C = (( F - 32.0 ) * ( 5.0 / 9.0 ));
+    return C;
+}
+fahrenheitACelsius(60.0)
+fahrenheitACelsius(32.0)
+double gravedadSuperficial(double masa, double radio) {
+    var G = 6.67430e-11;
+    var gravedadSuperficial = ( G * masa ) / Math.pow(radio,2.0);
+    return gravedadSuperficial;
+}
+gravedadSuperficial(5.972e24,6.378e6)
+gravedadSuperficial(6.421e23,3.3972e6)
+double gravedadSuperficialDeLaTierra() {
+    var G = 6.67430e-11;
+    var MASADELATIERRA = 5.972e24; 
+    var RADIO = 6.378e6;
+    var gravedadSuperficial = ( G * MASADELATIERRA ) / Math.pow(RADIO,2.0);
+    return gravedadSuperficial;
+}
+gravedadSuperficialDeLaTierra()
+pesoEnMarte(80.0)
+pesoEnMarte(80.0)
+double pesoEnMarte(double pesoTierra) {
+    var MASAENMARTE = 6.421e23;
+    var RADIOENMARTE = 3.3972e6;
+    var gravedadSuperficialEnMarte = gravedadSuperficial( MASAENMARTE, RADIOENMARTE );
+    var pesoEnMarte = ( ( gravedadSuperficialEnMarte / gravedadSuperficialDeLaTierra() ) * pesoTierra );
+    return pesoEnMarte;
+}
+pesoEnMarte(80.0)
+pesoEnMarte(65.0)
+esTriángulo(3.0,4.0,5.0)
+esTriángulo(3.0,4.0,5.0)
+esTriángulo(17.0,10.0,7.0)
+boolean esTriángulo(double lado1, double lado2, double lado3) {
+    var evaluandoLado = Math.max(lado1, lado2);
+    var ladoMayor = Math.max(lado3, evaluandoLado);
+    var evaluacionNumeroMenor1 = Math.min(lado1,lado2);
+    var evaluacionNumeroMenor2 = (evaluacionNumeroMenor1 != lado1) ?  Math.min(lado3,lado1) : Math.min(lado3,lado2);
+    var sumaDeDosLados = evaluacionNumeroMenor1 + evaluacionNumeroMenor2;
+    return (sumaDeDosLados > ladoMayor) ? true : false; 
+}
+esTriángulo(17.0,10.0,7.0)
+esTriángulo(3.0,4.0,5.0)
+esTriángulo(6.0,9.0,5.0)
+esTriángulo(15.0,9.0,5.0)
+esTriángulo(15.0,9.0,25.0)
+esTriángulo(15.0,9.0,7.0)
+double LeyCosenos(double a, double b, double gamma) {
+var AnguloEntreAyB = Math.toRadians(gamma);
+var terminoDelCoseno = 2 * a * b * AnguloEntreAyB;
+var sumaDeCuadrados = (Math.pow(a,2) + Math.pow(b,2));
+var c = Math.sqrt(sumaDeCuadrados - terminoDelCoseno);
+return c;
+}
+LeyCosenos(3.0,4.0,90.0)
+LeyCosenos(3.0,4.0,90.0)
+leyCosenos(3.0, 4.0, 90.0)
+leyCosenos(5,7,60)
+double leyCosenos(double a, double b, double gamma) {
+var AnguloEntreAyBRadianes = Math.toRadians(gamma);
+var AnguloEntreAyBCoseno = Math.cos(AnguloEntreAyBRadianes);    
+var terminoDelCoseno = 2 * a * b * AnguloEntreAyBCoseno;
+var sumaDeCuadrados = (Math.pow(a,2) + Math.pow(b,2));
+var c = Math.sqrt(sumaDeCuadrados - terminoDelCoseno);
+return c;
+}
+leyCosenos(3.0, 4.0, 90.0)
+leyCosenos(11.0, 11.0, 60.0)
