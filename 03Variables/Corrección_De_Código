@@ -1,0 +1,9 @@
+double promedio( double edadMenor, double edadMayor) {
+   var sumaEdades = edadMenor + edadMayor;
+   var promedio = sumaEdades / 2.0;
+  return promedio;
+}
+promedio(11,16)
+promedio(2,3)
+promedio(56,30)
+promedio(56,31)
