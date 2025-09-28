@@ -1,0 +1,7 @@
+double duplicar(double a) { 
+        var foo = a * 2.0;
+        return foo;
+}
+duplicar(2)
+duplicar(4)
+duplicar(6)
