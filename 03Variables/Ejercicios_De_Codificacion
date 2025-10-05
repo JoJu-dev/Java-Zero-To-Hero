@@ -73,10 +73,9 @@ esTriángulo(17.0,10.0,7.0)
 boolean esTriángulo(double lado1, double lado2, double lado3) {
     var evaluandoLado = Math.max(lado1, lado2);
     var ladoMayor = Math.max(lado3, evaluandoLado);
-    var evaluacionNumeroMenor1 = Math.min(lado1,lado2);
-    var evaluacionNumeroMenor2 = (evaluacionNumeroMenor1 != lado1) ?  Math.min(lado3,lado1) : Math.min(lado3,lado2);
-    var sumaDeDosLados = evaluacionNumeroMenor1 + evaluacionNumeroMenor2;
-    return (sumaDeDosLados > ladoMayor) ? true : false; 
+    var sumaDeTodosLosLados = lado1 + lado2 + lado3;
+    var sumaDeLadosMenores = sumaDeTodosLosLados - ladoMayor;
+    return (sumaDeLadosMenores > ladoMayor) ? true : false; 
 }
 esTriángulo(17.0,10.0,7.0)
 esTriángulo(3.0,4.0,5.0)
