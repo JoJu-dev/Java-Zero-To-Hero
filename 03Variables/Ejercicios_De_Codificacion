@@ -50,18 +50,18 @@ gravedadSuperficial(5.972e24,6.378e6)
 gravedadSuperficial(6.421e23,3.3972e6)
 double gravedadSuperficialDeLaTierra() {
     var G = 6.67430e-11;
-    var MASADELATIERRA = 5.972e24; 
+    var MASA_DE_LA_TIERRA = 5.972e24; 
     var RADIO = 6.378e6;
-    var gravedadSuperficial = ( G * MASADELATIERRA ) / Math.pow(RADIO,2.0);
+    var gravedadSuperficial = ( G * MASA_DE_LA_TIERRA ) / Math.pow(RADIO,2.0);
     return gravedadSuperficial;
 }
 gravedadSuperficialDeLaTierra()
 pesoEnMarte(80.0)
 pesoEnMarte(80.0)
 double pesoEnMarte(double pesoTierra) {
-    var MASAENMARTE = 6.421e23;
-    var RADIOENMARTE = 3.3972e6;
-    var gravedadSuperficialEnMarte = gravedadSuperficial( MASAENMARTE, RADIOENMARTE );
+    var MASA_EN_MARTE = 6.421e23;
+    var RADIO_EN_MARTE = 3.3972e6;
+    var gravedadSuperficialEnMarte = gravedadSuperficial( MASA_EN_MARTE, RADIO_EN_MARTE );
     var pesoEnMarte = ( ( gravedadSuperficialEnMarte / gravedadSuperficialDeLaTierra() ) * pesoTierra );
     return pesoEnMarte;
 }
