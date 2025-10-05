@@ -86,8 +86,8 @@ esTriángulo(15.0,9.0,25.0)
 esTriángulo(15.0,9.0,7.0)
 double LeyCosenos(double a, double b, double gamma) {
 var AnguloEntreAyB = Math.toRadians(gamma);
-var terminoDelCoseno = 2 * a * b * AnguloEntreAyB;
-var sumaDeCuadrados = (Math.pow(a,2) + Math.pow(b,2));
+var terminoDelCoseno = 2.0 * a * b * AnguloEntreAyB;
+var sumaDeCuadrados = (Math.pow(a,2.0) + Math.pow(b,2.0));
 var c = Math.sqrt(sumaDeCuadrados - terminoDelCoseno);
 return c;
 }
@@ -98,8 +98,8 @@ leyCosenos(5,7,60)
 double leyCosenos(double a, double b, double gamma) {
 var AnguloEntreAyBRadianes = Math.toRadians(gamma);
 var AnguloEntreAyBCoseno = Math.cos(AnguloEntreAyBRadianes);    
-var terminoDelCoseno = 2 * a * b * AnguloEntreAyBCoseno;
-var sumaDeCuadrados = (Math.pow(a,2) + Math.pow(b,2));
+var terminoDelCoseno = 2.0 * a * b * AnguloEntreAyBCoseno;
+var sumaDeCuadrados = (Math.pow(a,2.0) + Math.pow(b,2.0));
 var c = Math.sqrt(sumaDeCuadrados - terminoDelCoseno);
 return c;
 }
