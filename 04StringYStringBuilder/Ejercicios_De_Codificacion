@@ -311,8 +311,8 @@ String elipsificar(String titulo, int longitud) {
             var siguienteEsCaracter =(LONGITUD >= titulo.length() - 1) ? esCaracter :   Character.isLetterOrDigit(titulo.charAt(evitarIndexException + 1));
             var tituloResultanteMenor = tituloResultante.length() < titulo.length() ? true : false;
     
-            var formatoSinAgregarCaracter = String.format("%s...", titulo.substring(0, tituloResultante.length()));
-            var formatoAgregandoCaracter = String.format("%s...", titulo.substring(0, (tituloResultante.length() + 1)));
+            var formatoSinAgregarCaracter = String.format("%s%s", titulo.substring(0, tituloResultante.length()), PUNTOS_SUSPENSIVOS);
+            var formatoAgregandoCaracter = String.format("%s%s", titulo.substring(0, (tituloResultante.length() + 1)), PUNTOS_SUSPENSIVOS);
             var existeSiguienteCaracter = (siguienteEsCaracter) && (tituloResultanteMenor) ? formatoSinAgregarCaracter : formatoAgregandoCaracter;
                
             var segundoEspacio = titulo.lastIndexOf(" ");
