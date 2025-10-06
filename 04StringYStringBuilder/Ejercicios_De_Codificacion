@@ -1,0 +1,320 @@
+String titleCase(String texto) { 
+    var primeraLetra = texto.substring(0,1);
+    var restoDelTexto = texto.substring(1);
+    return String.format("%S%s",primeraLetra,restoDelTexto.toLowerCase());
+}
+titleCase("java")
+titleCase("Java")
+titleCase("JAVA")
+titleCase("CONSTANTE");
+boolean terminaEnS(string texto) {
+ var ultimoCaracter = texto.charAt(texto.length() - 1);
+ return (últimoCaracter == 's') || (últimoCaracter == 'S');
+}
+boolean terminaEnS(String texto) {
+ var últimoCaracter = texto.charAt(texto.length() - 1);
+ return (últimoCaracter == 's') || (últimoCaracter == 'S');
+}
+terminaEnS("miércoles")
+terminaEnS("jueves")
+terminaEnS("sábado")
+terminaEnS("computador")
+terminaEnS("monitores")
+terminaEnS("monitor")
+esPalindrome("aa")
+esPalindrome("ae")
+esPalindrome("ae")
+esPalindrome("aE")
+esPalindrome("aE")
+esPalindrome("aE")
+esPalindrome("aE")
+esPalindrome("aE")
+esPalindrome("aA")
+esPalindrome("ab")
+esPalindrome("ee")
+esPalindrome("Aa")
+esPalindrome("ll")
+boolean esPalindrome(String cadena) {
+    var conversionCadenaMinuscula = cadena.toLowerCase();
+    var posicion0 = conversionCadenaMinuscula.charAt(0);
+    var posicion1 = conversionCadenaMinuscula.charAt(1);
+    var cadenaInversa= String.format("%s%s",posicion1,posicion0);
+    var esPalindrome = conversionCadenaMinuscula.equals(cadenaInversa);
+    return esPalindrome;
+}
+esPalindrome("aE")
+esPalindrome("aA")
+esPalindrome("ee")
+esPalindrome("ew")
+esPalindrome("eE")
+"/sfsdfsdf.com".charAt(0)
+esExterno("/definitetely-internal")
+esExterno("/definitetely-internal")
+esExterno("https://www.java.com")
+esExterno("https://dont-go.com")
+"https:".indexOf(0,5)
+"https:".indexOf(0,4)
+esExterno("/definitetely-internal")
+esExterno("/definitetely-internal")
+esExterno("/definitetely-internal")
+esExterno("https://www.java.com")
+esExterno("http://www.java.com")
+esExterno("httpx://www.java.com")
+esExterno("httpz://www.java.com")
+esExterno("httpz://www.java.com")
+esExterno("httpz://www.java.com")
+"httpz".length()
+"httpz".length() -1
+"httpz".indexOf(4)
+"httpz".indexOf("p")
+esExterno("httpz://www.java.com")
+"https".length()
+"https".length() - 1
+"https".charAt(4)
+"https".charAt(5)
+"https".charAt(4)
+esExterno("httpz://www.java.com")
+"httpz://".substring(0,4)
+"httpz://".substring(0,5)
+"httpz".equals("https")
+esExterno("httpz://www.java.com")
+esExterno("httpz://www.java.com")
+esExterno("httpz://www.java.com")
+esExterno("http://www.java.com")
+esExterno("https://www.java.com")
+esExterno("hz://www.java.com")
+esExterno("http://www.java.com")
+esExterno("http://www.java.com")
+esExterno("https://www.java.com")
+esExterno("http[s://www.java.com")
+esExterno("https://www.java.com")
+"https".equals("http")
+"http".equals("https")
+esExterno("https://www.java.com")
+esExterno("https://www.java.com")
+esExterno("https://www.java.com")
+esExterno("https://www.java.com")
+esExterno("https://www.java.com")
+esExterno("https://www.java.com")
+esExterno("https://www.java.com")
+esExterno("/definitely-internal")
+boolean esExterno(String enlace) { 
+  var BARRA_INCLINADA = '/';
+  var primerCaracterDelEnlace = enlace.charAt(0);
+  var esExterno = ( primerCaracterDelEnlace != (BARRA_INCLINADA) );
+  return esExterno;
+}
+esExterno("/definitely-internal")
+esExterno("https://www.java.com")
+esExterno("http://www.java.com")
+"debug.sh".lastIndexOf(".")
+"debug.sh".lastIndexOf(".", "debuh.sh".length() - 1)
+"debug.sh".indexOf(".", "debuh.sh".length() - 1)
+"debug.sh".indexOf(".", "debuh.sh".length() )
+"debug.sh".indexOf(".", "debuh.sh".length()-1)
+"debuh.sh".length()-1
+"debug.sh".indexOf(".", 0)
+extension("debug.sh")
+extension("debug.sh")
+extension("/path/to/debug.sh")
+extension("/path/to/debug.sh")
+extension("debug.sh")
+extension("/the.dot/file.java");
+String extension(String ruta) { 
+    var identificarPunto = ruta.lastIndexOf(".");
+    var extension = (identificarPunto == -1) ? "" : ruta.substring(identificarPunto + 1, ruta.length());
+    return extension;
+}
+extension("/path/to/debug.sh")
+extension("/the.dot/file.java");
+extension("debug.sh")
+extension("no-extension")
+domain("https://www.java.com/en/")
+domain("https://www.java.com/en/")
+domain("https://www.java.com/en/")
+domain("https://www.java.com/en/")
+"https://www.java.com/en/".indexOf("/")
+"www.java.com/en/".indexOf("/")
+domain("https://www.java.com/en/")
+domain("https://jcp.org")
+"www.java.com/en/".contains("/")
+"jcp.org".contains("/")
+String domain(String URL) {
+    var PROTOCOLO = "https://";
+    var BARRA_INCLINADA = "/";
+    var longitudProtocolo = PROTOCOLO.length();
+    var dominioYRuta = URL.substring(longitudProtocolo,URL.length());
+    var isBarraInclinada = dominioYRuta.contains(BARRA_INCLINADA);
+    var inicioDeRuta = dominioYRuta.indexOf(BARRA_INCLINADA);
+    var dominio = isBarraInclinada ?  dominioYRuta.substring(0,inicioDeRuta) : dominioYRuta;
+    return dominio;
+}
+domain("https://www.java.com/en/")
+domain("https://jcp.org")
+String calcularSemanaSanta(int año) {
+    var a = año % 9;
+    var b = año / 100;
+    var c = año / 100;
+    var d = a / 4;
+    var e = b % 4;
+    var g = ((8 * b) + 13) / 25;
+    var h = ((19 * a) + b - d - g + 15) % 30;
+    var i = c / 4;
+    var k = c % 4;
+    var l = (32 + (2 * e) + (2 * i) - h - k) % 7;
+    var m = (a + (11 * h) + (19  * l)) / 433;
+    var n = (h + l - (7 * m) + 90) / 25;
+    var p = (h + l - (7 * m) + (33 * n) + 19) % 32;
+    var formatoMes = String.format("0%s",n);
+    return formatoMes;
+}
+calcularSemanaSanta(2024)
+DomingoDePascua(2024)
+String DomingoDePascua(int año) {
+    var a = año % 9;
+    var b = año / 100;
+    var c = año % 100;
+    var d = b / 4;
+    var e = b % 4;
+    var g = ((8 * b) + 13) / 25;
+    var h = ((19 * a) + b - d - g + 15) % 30;
+    var i = c / 4;
+    var k = c % 4;
+    var l = (32 + (2 * e) + (2 * i) - h - k) % 7;
+    var m = (a + (11 * h) + (19  * l)) / 433;
+    var n = (h + l - (7 * m) + 90) / 25;
+    var p = (h + l - (7 * m) + (33 * n) + 19) % 32;
+    var formatoMes = String.format("0%s",n);
+    var formatoDia = (p < 10) ? String.format("0%s",p) : String.format("%s",p);
+    var domingoPascua = String.format("%s/%s/%s",año,formatoMes,formatoDia);
+    return domingoPascua;
+}
+DomingoDePascua(2024)
+String domingoDePascua(int año) {
+    var a = año % 19;
+    var b = año / 100;
+    var c = año % 100;
+    var d = b / 4;
+    var e = b % 4;
+    var g = ((8 * b) + 13) / 25;
+    var h = ((19 * a) + b - d - g + 15) % 30;
+    var i = c / 4;
+    var k = c % 4;
+    var l = (32 + (2 * e) + (2 * i) - h - k) % 7;
+    var m = (a + (11 * h) + (19  * l)) / 433;
+    var n = (h + l - (7 * m) + 90) / 25;
+    var p = (h + l - (7 * m) + (33 * n) + 19) % 32;
+    var formatoMes = String.format("0%s",n);
+    var formatoDia = (p < 10) ? String.format("0%s",p) : String.format("%s",p);
+    var domingoPascua = String.format("%s/%s/%s",año,formatoMes,formatoDia);
+    return domingoPascua;
+}
+domingoDePascua(2024)
+domingoDePascua(2025)
+domingoDePascua(1961)
+String hexString(int intensidadRojo) {
+    var HexaRojo = String.format("%x",intensidadRojo);
+    return HexaRojo;
+}
+hexString(0)
+hexString(255)
+hexString(12)
+hexString(0,0,0)
+hexString(12,15,77)
+String hexString(int intensidadRojo, int intensidadVerde, int intensidadAzul) {
+    var Hexa = String.format("%02X%02X%02X",intensidadRojo,intensidadVerde,intensidadAzul);
+    return Hexa;
+}
+hexString(12,15,77)
+hexString(0,0,0)
+hexString(255,255,255)
+boolean existeCaracterEspecial(String correo, String caracter) {
+    
+        var recorreCorreoInicio = correo.indexOf(caracter);
+        var recorreCorreoFinal = correo.lastIndexOf(caracter);   
+    
+        var existeCaracterEspecial = ( recorreCorreoInicio != (-1) ) && ( recorreCorreoInicio == recorreCorreoFinal ) ? true : false;
+         return existeCaracterEspecial;
+    
+ }
+ boolean existeCaracterAntesDeArroba(String correo) {
+        var encontrarArroba = correo.indexOf("@");
+        var obtenerCaracterAntesDeArroba = correo.substring(0,encontrarArroba);
+        
+        var existeCaracter = (obtenerCaracterAntesDeArroba.equals("")) ? false : Character.isLetterOrDigit(obtenerCaracterAntesDeArroba.charAt(0));
+        
+        return existeCaracter;
+}
+ boolean caracterEntreArrobaYPunto(String correo) {
+         var ARROBA = "@";
+         var PUNTO = ".";
+         var encontrarArroba = correo.indexOf(ARROBA);
+         var encontrarPunto = correo.lastIndexOf(PUNTO);
+      
+         var obtenerCaracteresEntreArrobaYPunto = puntoDespuesDeArroba(correo) ? correo.substring(encontrarArroba + 1, encontrarPunto) : "";
+         var existeCaracterEntreArrobaYPunto = obtenerCaracteresEntreArrobaYPunto.equals("")  ?  false : Character.isLetterOrDigit(obtenerCaracteresEntreArrobaYPunto.charAt(0));
+         return existeCaracterEntreArrobaYPunto;
+ }
+ boolean existeCaracterDespuesDePunto(String correo){
+        
+        var PUNTO = ".";
+        var encontrarPunto = correo.indexOf(PUNTO);
+        var obtenerPunto = correo.substring(encontrarPunto + 1);
+        
+        var obtenerCaracter = caracterEntreArrobaYPunto(correo) ? obtenerPunto : "";
+        var caracterDespuesDePunto =  (obtenerCaracter.equals("")) ? false : Character.isLetterOrDigit(obtenerCaracter.charAt(0));
+        return caracterDespuesDePunto;
+}
+correoElectronicoValido("abc@me.com")
+    boolean puntoDespuesDeArroba(String correo) {
+    
+             var ARROBA = "@";
+             var PUNTO = ".";
+          
+             var posicionArroba = correo.indexOf(ARROBA);
+             var posicionPunto = correo.indexOf(PUNTO);           
+      
+             var cadenaApartirDeArroba = existeCaracterEspecial(correo,ARROBA) ? correo.substring(posicionArroba + 1) : "";
+    
+             var recorrePuntoInicio = cadenaApartirDeArroba.indexOf(PUNTO);
+             var recorrePuntoFinal =  cadenaApartirDeArroba.lastIndexOf(PUNTO);
+             var existePuntoUnico = ( recorrePuntoInicio != (-1) ) && ( recorrePuntoInicio == recorrePuntoFinal ) ? true: false;
+    
+             var existePuntoDespuesDeArroba = cadenaApartirDeArroba.contains(".");
+             var validarPunto = (existePuntoUnico) && (existePuntoDespuesDeArroba) ? true : false;
+             return validarPunto;
+}
+boolean correoElectronicoValido(String correo) {
+         var correoValido = (existeCaracterAntesDeArroba(correo) ) && (existeCaracterDespuesDePunto(correo)) ? true : false;
+         return correoValido;
+}
+correoElectronicoValido("a.bc@me.com")
+correoElectronicoValido("abc@me.com")
+correoElectronicoValido("abc@me.")
+correoElectronicoValido("abc@mecom")
+correoElectronicoValido("abc@me@com")
+correoElectronicoValido("@me.com")
+correoElectronicoValido("a.bc@me.com")
+correoElectronicoValido("abc@me.co.m")
+correoElectronicoValido("a@bc@me.com")
+
+String elipsificar(String titulo, int longitud) {
+                var PUNTOS_SUSPENSIVOS = "\u2026";
+                var LONGITUD = (longitud >= titulo.length()) ? titulo.length() - 1 : longitud;
+                var tituloResultante = titulo.substring(0,LONGITUD);
+   
+                var evitarIndexException = ((titulo.length()) <= LONGITUD) ? LONGITUD - 1: longitud;
+                //var evitarIndexException1  ((titulo.length()) > LONGITUD) ? LONGITUD -1 : longitud;
+   
+                var caracterIndice = titulo.charAt(evitarIndexException);
+   
+                var esCaracter = Character.isLetterOrDigit(caracterIndice) ? true : false;
+                var siguienteEsCaracter = Character.isLetterOrDigit(titulo.charAt(evitarIndexException + 1));
+                var tituloResultanteMenor = tituloResultante.length() < titulo.length() ? true : false;
+                var existeSiguienteCaracter = (siguienteEsCaracter) && (tituloResultanteMenor) ? String.format("%s...",titulo.substring(0,tituloResultante.length())) : String.format("%s...",titulo.substrin
+g(0,tituloResultante.length() + 1));
+                var segundoEspacio = titulo.lastIndexOf(" ");
+                var elipsificar = (tituloResultante.length() > segundoEspacio) ? titulo : existeSiguienteCaracter;
+   
+                return elipsificar;
+}

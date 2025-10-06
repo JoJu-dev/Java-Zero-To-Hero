@@ -1,0 +1,29 @@
+boolean empiezaConMinúscula(String s) {
+    var primerCaracter = s.charAt(0);
+    return Character.isLowerCase(primerCaracter);
+}
+empiezaConMinúscula("manzana")
+empiezaConMinúscula("Manzana")
+pluralizar(1,"código")
+pluralizar(1,"códigos")
+pluralizar(2,"códigos")
+pluralizar(2,"códigos")
+pluralizar(2,"código")
+pluralizar(2,"código")
+pluralizar(2,"código")
+pluralizar(2,"código")
+pluralizar(2,"código")
+pluralizar(2,"código")
+String pluralizar(int conteo, String s) {
+    return (conteo < 2) ? s : String.format("%d %ss",conteo, s);
+}
+pluralizar(2,"código")
+pluralizar(1,"código")
+boolean esVocal(char letra) {
+ var  letraMinúscula = Character.toLowerCase(letra);
+ return "aeiou".contains(Character.toString(letraMinúscula));
+}
+esVocal('a')
+esVocal('A')
+esVocal('c')
+esVocal('@')
