@@ -299,22 +299,28 @@ correoElectronicoValido("abc@me.co.m")
 correoElectronicoValido("a@bc@me.com")
 
 String elipsificar(String titulo, int longitud) {
-                var PUNTOS_SUSPENSIVOS = "\u2026";
-                var LONGITUD = (longitud >= titulo.length()) ? titulo.length() - 1 : longitud;
-                var tituloResultante = titulo.substring(0,LONGITUD);
-   
-                var evitarIndexException = ((titulo.length()) <= LONGITUD) ? LONGITUD - 1: longitud;
-                //var evitarIndexException1  ((titulo.length()) > LONGITUD) ? LONGITUD -1 : longitud;
-   
-                var caracterIndice = titulo.charAt(evitarIndexException);
-   
-                var esCaracter = Character.isLetterOrDigit(caracterIndice) ? true : false;
-                var siguienteEsCaracter = Character.isLetterOrDigit(titulo.charAt(evitarIndexException + 1));
-                var tituloResultanteMenor = tituloResultante.length() < titulo.length() ? true : false;
-                var existeSiguienteCaracter = (siguienteEsCaracter) && (tituloResultanteMenor) ? String.format("%s...",titulo.substring(0,tituloResultante.length())) : String.format("%s...",titulo.substrin
-g(0,tituloResultante.length() + 1));
-                var segundoEspacio = titulo.lastIndexOf(" ");
-                var elipsificar = (tituloResultante.length() > segundoEspacio) ? titulo : existeSiguienteCaracter;
-   
-                return elipsificar;
+            var PUNTOS_SUSPENSIVOS = "\u2026";
+                    
+            var LONGITUD = (longitud >= titulo.length()) ? (titulo.length() - 1) : longitud ;
+            var tituloResultante = titulo.substring(0,LONGITUD);
+       
+            var evitarIndexException = ((titulo.length()) <= LONGITUD) ? (titulo.length() - 1): LONGITUD;
+              
+            var caracterIndice = titulo.charAt(evitarIndexException);
+            var esCaracter = Character.isLetterOrDigit(caracterIndice) ? true : false;
+            var siguienteEsCaracter =(LONGITUD >= titulo.length() - 1) ? esCaracter :   Character.isLetterOrDigit(titulo.charAt(evitarIndexException + 1));
+            var tituloResultanteMenor = tituloResultante.length() < titulo.length() ? true : false;
+    
+            var formatoSinAgregarCaracter = String.format("%s...", titulo.substring(0, tituloResultante.length()));
+            var formatoAgregandoCaracter = String.format("%s...", titulo.substring(0, (tituloResultante.length() + 1)));
+            var existeSiguienteCaracter = (siguienteEsCaracter) && (tituloResultanteMenor) ? formatoSinAgregarCaracter : formatoAgregandoCaracter;
+               
+            var segundoEspacio = titulo.lastIndexOf(" ");
+            var elipsificar = (tituloResultante.length() > segundoEspacio) ? titulo : existeSiguienteCaracter;
+       
+            return elipsificar;
 }
+elipsificar("Java is fun",4)
+elipsificar("Java is fun",6)
+elipsificar("Java is fun",11)
+elipsificar("Java is fun",20)
