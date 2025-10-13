@@ -226,75 +226,58 @@ String hexString(int intensidadRojo, int intensidadVerde, int intensidadAzul) {
 hexString(12,15,77)
 hexString(0,0,0)
 hexString(255,255,255)
-boolean existeCaracterEspecial(String correo, String caracter) {
-    
-        var recorreCorreoInicio = correo.indexOf(caracter);
-        var recorreCorreoFinal = correo.lastIndexOf(caracter);   
-    
-        var existeCaracterEspecial = ( recorreCorreoInicio != (-1) ) && ( recorreCorreoInicio == recorreCorreoFinal ) ? true : false;
-         return existeCaracterEspecial;
-    
- }
- boolean existeCaracterAntesDeArroba(String correo) {
-        var encontrarArroba = correo.indexOf("@");
-        var obtenerCaracterAntesDeArroba = correo.substring(0,encontrarArroba);
-        
-        var existeCaracter = (obtenerCaracterAntesDeArroba.equals("")) ? false : Character.isLetterOrDigit(obtenerCaracterAntesDeArroba.charAt(0));
-        
-        return existeCaracter;
+boolean tieneUnaSolaArroba(String email) {
+    var arroba = email.indexOf('@');
+    var segundaArroba = (arroba != -1) ? email.indexOf('@', arroba + 1) : -1;
+    return arroba != -1 && segundaArroba == -1;
 }
- boolean caracterEntreArrobaYPunto(String correo) {
-         var ARROBA = "@";
-         var PUNTO = ".";
-         var encontrarArroba = correo.indexOf(ARROBA);
-         var encontrarPunto = correo.lastIndexOf(PUNTO);
-      
-         var obtenerCaracteresEntreArrobaYPunto = puntoDespuesDeArroba(correo) ? correo.substring(encontrarArroba + 1, encontrarPunto) : "";
-         var existeCaracterEntreArrobaYPunto = obtenerCaracteresEntreArrobaYPunto.equals("")  ?  false : Character.isLetterOrDigit(obtenerCaracteresEntreArrobaYPunto.charAt(0));
-         return existeCaracterEntreArrobaYPunto;
- }
- boolean existeCaracterDespuesDePunto(String correo){
-        
-        var PUNTO = ".";
-        var encontrarPunto = correo.indexOf(PUNTO);
-        var obtenerPunto = correo.substring(encontrarPunto + 1);
-        
-        var obtenerCaracter = caracterEntreArrobaYPunto(correo) ? obtenerPunto : "";
-        var caracterDespuesDePunto =  (obtenerCaracter.equals("")) ? false : Character.isLetterOrDigit(obtenerCaracter.charAt(0));
-        return caracterDespuesDePunto;
+
+boolean unSoloPuntoDespuesArroba(String email) {
+    var arroba = email.indexOf('@');
+    var últimoPunto = email.lastIndexOf('.');
+    var siguientePunto = email.index('.', arroba + 1);
+    return (últimoPunto != -1) && (siguientePunto == últimoPunto);
 }
-correoElectronicoValido("abc@me.com")
-    boolean puntoDespuesDeArroba(String correo) {
-    
-             var ARROBA = "@";
-             var PUNTO = ".";
-          
-             var posicionArroba = correo.indexOf(ARROBA);
-             var posicionPunto = correo.indexOf(PUNTO);           
-      
-             var cadenaApartirDeArroba = existeCaracterEspecial(correo,ARROBA) ? correo.substring(posicionArroba + 1) : "";
-    
-             var recorrePuntoInicio = cadenaApartirDeArroba.indexOf(PUNTO);
-             var recorrePuntoFinal =  cadenaApartirDeArroba.lastIndexOf(PUNTO);
-             var existePuntoUnico = ( recorrePuntoInicio != (-1) ) && ( recorrePuntoInicio == recorrePuntoFinal ) ? true: false;
-    
-             var existePuntoDespuesDeArroba = cadenaApartirDeArroba.contains(".");
-             var validarPunto = (existePuntoUnico) && (existePuntoDespuesDeArroba) ? true : false;
-             return validarPunto;
+
+boolean unCaracterAntesArroba(String email) {
+    var arroba = email.indexOf('@');
+    return arroba > 0;
 }
-boolean correoElectronicoValido(String correo) {
-         var correoValido = (existeCaracterAntesDeArroba(correo) ) && (existeCaracterDespuesDePunto(correo)) ? true : false;
-         return correoValido;
+
+boolean unSoloPuntoDespuesArroba(String email) {
+    var arroba = email.indexOf('@');
+    var últimoPunto = email.lastIndexOf('.');
+    var siguientePunto = email.indexOf('.', arroba + 1);
+    return (últimoPunto != -1) && (siguientePunto == últimoPunto);
 }
-correoElectronicoValido("a.bc@me.com")
-correoElectronicoValido("abc@me.com")
-correoElectronicoValido("abc@me.")
-correoElectronicoValido("abc@mecom")
-correoElectronicoValido("abc@me@com")
-correoElectronicoValido("@me.com")
-correoElectronicoValido("a.bc@me.com")
-correoElectronicoValido("abc@me.co.m")
-correoElectronicoValido("a@bc@me.com")
+
+boolean noTerminaEnPunto(String email) {
+    var últimoPunto = email.lastIndexOf('.');
+    return últimoPunto < (email.length() - 1);
+}
+
+boolean alMenosUnCaracterEntreArrobaYÚltimoPunto(String email) {
+    var arroba = email.indexOf('@');
+    var últimoPunto = email.lastIndexOf('.');
+    return (arroba + 1) < últimoPunto;
+}
+
+boolean correoElectrónicoVálido(String email) {
+    return tieneUnaSolaArroba(email) &&
+        unCaracterAntesArroba(email) &&
+        unSoloPuntoDespuesArroba(email) &&
+        alMenosUnCaracterEntreArrobaYÚltimoPunto(email) &&
+        noTerminaEnPunto(email);
+}
+correoElectrónicoVálido("a.bc@me.com")
+correoElectrónicoVálido("abc@me.com")
+correoElectrónicoVálido("abc@me.")
+correoElectrónicoVálido("abc@mecom")
+correoElectrónicoVálido("abc@me@com")
+correoElectrónicoVálido("@me.com")
+correoElectrónicoVálido("a.bc@me.com")
+correoElectrónicoVálido("abc@me.co.m")
+correoElectrónicoVálido("a@bc@me.com")
 
 String elipsificar(String titulo, int longitud) {
             var PUNTOS_SUSPENSIVOS = "\u2026";
