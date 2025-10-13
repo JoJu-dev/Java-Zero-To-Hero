@@ -204,9 +204,7 @@ String domingoDePascua(int año) {
     var m = (a + (11 * h) + (19  * l)) / 433;
     var n = (h + l - (7 * m) + 90) / 25;
     var p = (h + l - (7 * m) + (33 * n) + 19) % 32;
-    var formatoMes = String.format("0%s",n);
-    var formatoDia = (p < 10) ? String.format("0%s",p) : String.format("%s",p);
-    var domingoPascua = String.format("%s/%s/%s",año,formatoMes,formatoDia);
+    var domingoPascua = String.format("%d/%02d/%02d",año,n,p);
     return domingoPascua;
 }
 domingoDePascua(2024)
