@@ -3,36 +3,44 @@ package code.figueroajose.jugs.ecinco.nueve;
 public class PatronAjedrez {
 
 	public static String patronAjedrez(int tamanio) {
+		var builder = new StringBuilder();
 		var patronAjedrez = "";
 		var salida = 1;
 
 		while (salida <= tamanio) {
-			patronAjedrez += esPar(salida) ? patronPar(tamanio) : patronImPar(tamanio);
+			patronAjedrez = esPar(salida) ? patronPar(tamanio) : patronImPar(tamanio);
+			builder.append(patronAjedrez);
 			salida++;
 
 		}
 
-		return patronAjedrez;
+		return builder.toString();
 
 	}
 
 	private static String patronImPar(int tamano) {
+		var builder = new StringBuilder();
 		var imprimir = "";
+
 		for (var patron = 1; patron <= tamano; patron++) {
-			imprimir += esPar(patron) ? hilerasPares() : hilerasImPares();
+			imprimir = esPar(patron) ? hilerasPares() : hilerasImPares();
+			builder.append(imprimir);
 		}
-		imprimir = imprimir + AgregarEspacio();
-		return imprimir;
+		builder.append(AgregarEspacio());
+		return builder.toString();
 
 	}
 
 	private static String patronPar(int tamano) {
+		var builder = new StringBuilder();
 		var imprimir = "";
 		for (var patron = 0; patron < tamano; patron++) {
-			imprimir += esPar(patron) ? hilerasPares() : hilerasImPares();
+			imprimir = esPar(patron) ? hilerasPares() : hilerasImPares();
+			builder.append(imprimir);
 		}
-		imprimir = imprimir + AgregarEspacio();
-		return imprimir;
+
+		builder.append(AgregarEspacio());
+		return builder.toString();
 
 	}
 
