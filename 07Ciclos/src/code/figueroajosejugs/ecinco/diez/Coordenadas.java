@@ -4,7 +4,6 @@ public class Coordenadas {
 
 	public static String coordenadas(int tamano) {
 		var builder = new StringBuilder();
-		var imprimirCoordenadas = "";
 		for (int i = 1; i <= tamano; i++) {
 			for (int y = 1; y <= tamano; y++) {
 
@@ -12,10 +11,9 @@ public class Coordenadas {
 
 			}
 
-			imprimirCoordenadas = builder.toString();
 		}
 
-		return AgregarBarraVertical(imprimirCoordenadas);
+		return AgregarBarraVertical(builder.toString());
 
 	}
 
