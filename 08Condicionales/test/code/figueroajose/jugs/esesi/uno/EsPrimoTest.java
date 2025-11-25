@@ -27,4 +27,15 @@ public class EsPrimoTest {
 	void casoPruebaTres() {
 		assertFalse(EsPrimo.esPrimo(100));
 	}
+	
+	@Test
+	@DisplayName("Caso de prueba 4")
+	void casoPruebaCuatro() {
+		assertFalse(EsPrimo.esPrimo(9));
+	}
+	@Test
+	@DisplayName("Caso de prueba 5")	
+	void casoPruebaCinco() {
+		assertFalse(EsPrimo.esPrimo1(9));
+	}
 }

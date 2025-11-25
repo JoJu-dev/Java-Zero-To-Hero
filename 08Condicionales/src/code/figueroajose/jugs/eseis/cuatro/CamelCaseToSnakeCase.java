@@ -50,9 +50,7 @@ public class CamelCaseToSnakeCase {
 			}
 		}
 
-		return switch (cantidadDePalabras) {
-		case 1 -> true;
-		default -> false;
-		};
+		return (cantidadDePalabras == 1) ;
+		
 	}
 }
