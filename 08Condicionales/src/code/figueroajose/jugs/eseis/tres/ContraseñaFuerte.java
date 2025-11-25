@@ -10,10 +10,13 @@ public class ContraseñaFuerte {
 	private static boolean almenosOchoCaracteres(String cadena) {
 		var tamanio = cadena.length();
 
-		return switch (tamanio) {
+		/*return switch (tamanio) {
 		case 8, 9, 10, 11, 12, 13, 14, 15, 16 -> true;
 		default -> false;
-		};
+		};*/
+		
+		return (tamanio >= 8) && (tamanio <=16);
+		
 	}
 
 	private static boolean almenosCaracterNoAlfanunerico(String cadena) {
@@ -22,13 +25,15 @@ public class ContraseñaFuerte {
 
 		for (var caracter = 0; caracter < cadena.length(); ++caracter) {
 			var caracterActual = cadena.charAt(caracter);
-
+			if(cantidadCaracteres > 0) {
+				return true;
+			}
 			if (!Character.isLetterOrDigit(caracterActual)) {
 				++cantidadCaracteres;
 			}
 		}
 
-		return (cantidadCaracteres > 0);
+		return false;
 	}
 
 	private static boolean almenosUnDigito(String cadena) {
@@ -37,13 +42,17 @@ public class ContraseñaFuerte {
 
 		for (var caracter = 0; caracter < cadena.length(); ++caracter) {
 			var caracterActual = cadena.charAt(caracter);
-
+			
+			if(cantidadCaracteres > 0) {
+				return true;
+			}
+			
 			if (Character.isDigit(caracterActual)) {
 				++cantidadCaracteres;
 			}
 		}
 
-		return (cantidadCaracteres > 0);
+		return false;
 	}
 
 	private static boolean almenosUnaMayuscula(String contraseña) {
@@ -52,13 +61,18 @@ public class ContraseñaFuerte {
 		for (var caracter = 0; caracter < contraseña.length(); ++caracter) {
 			var caracterActual = contraseña.charAt(caracter);
 
+			if(cantidadCaracteres > 0) {
+				return true;
+			}
+			
 			if (Character.isUpperCase(caracterActual)) {
 				++cantidadCaracteres;
+				
 			}
 
 		}
 
-		return (cantidadCaracteres > 0);
+		return false;
 
 	}
 

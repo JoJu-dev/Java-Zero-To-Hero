@@ -11,20 +11,26 @@ public class HallarDígitoDeVerificación {
 		var M = encontrandoModuloDeLaSuma(sumaDigitosPorPosiciones);
 
 		var digitoVerificacion = 0;
-		switch (M) {
-		case 0 -> digitoVerificacion = M;
-		default -> digitoVerificacion = (10 - M);
+
+		/*
+		 * switch (M) { case 0 -> digitoVerificacion = M; default -> digitoVerificacion
+		 * = (10 - M); };
+		 */
+
+		if (M == 0) {
+			digitoVerificacion = M;
+		} else {
+			digitoVerificacion = (10 - M);
 		}
-		;
 
 		return (digitoVerificacion == numeroVerificacion(numero));
 	}
 
-	public static int encontrandoModuloDeLaSuma(int suma) {
+	private static int encontrandoModuloDeLaSuma(int suma) {
 		return (suma % 10);
 	}
 
-	public static int sumaNumerosPosiciones(String n) {
+	private static int sumaNumerosPosiciones(String n) {
 		int suma = 0;
 		int sumaPares = 0;
 		int sumaImpares = 0;
@@ -46,15 +52,16 @@ public class HallarDígitoDeVerificación {
 		return suma;
 	}
 
-	public static String separandoElUltimoDigito(String numero) {
+	private static String separandoElUltimoDigito(String numero) {
 
 		return numero.substring(0, numero.length() - 1);
 	}
 
-	public static int numeroVerificacion(String numero) {
+	private static int numeroVerificacion(String numero) {
 		var n = numero.substring(numero.length() - 1);
 		var convertirAnumeroVerificacion = Integer.parseInt(n);
 
 		return convertirAnumeroVerificacion;
 	}
+
 }

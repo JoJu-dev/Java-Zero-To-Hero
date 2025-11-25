@@ -52,9 +52,6 @@ public class SnakeCaseToCamelCase {
 
 		}
 
-		return switch (contador) {
-		case 1 -> true;
-		default -> false;
-		};
+		return (contador == 1); 
 	}
 }
