@@ -1,6 +1,21 @@
-package code.figueroajosejugs.ecinco.diez;
+package code.figueroajose.jugs.ecinco.diez;
 
 public class Coordenadas {
+	
+	
+	
+	//Recomendado
+	public static String coordenadasR(int limite) {
+		var builder = new StringBuilder("|");
+		
+		for (var x = 1; x < limite; ++x) {
+			for(var y = 0; y < limite; ++y) {
+				builder.append(String.format("(%d,%d)|", x,y));
+			}
+		}
+		
+		return builder.toString();
+	}
 
 	public static String coordenadas(int tamano) {
 		var builder = new StringBuilder();

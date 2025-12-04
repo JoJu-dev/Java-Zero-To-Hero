@@ -8,7 +8,6 @@ public class DígitosSuma {
 		var digitoSuma = 0;
 	
 		digitoSuma = dígitosSumaPrimeraFase(digito);
-		//>= 10 ? dígitosSumaPrimeraFase(digitoSuma) : digitoSuma;
 		
 		while(digitoSuma >= 10) {
 			digitoSuma= dígitosSumaPrimeraFase(digitoSuma);
@@ -30,6 +29,5 @@ public class DígitosSuma {
 		return sumaDigito;
 	}
 	
-	//(sumaDigito >= 10 && ((sumaDigito != 11) && (sumaDigito != 22))) ? dígitosSuma(sumaDigito) : sumaDigito;
 	
 }

@@ -17,6 +17,6 @@ public class SumaRangoNúmerosTest {
 	@Test
 	@DisplayName("caso de Prueba Dos: \"input - 1,5\" output \"15\"")
 	void casoPruebaDos() {
-		assertEquals(15, SumaRangoNúmeros.sumaRangosNúmeros(1, 5));
+		assertEquals(15, SumaRangoNúmeros.sumaRangosNúmeros(5));
 	}
 }
