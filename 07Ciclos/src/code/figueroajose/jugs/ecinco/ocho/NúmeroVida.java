@@ -5,8 +5,14 @@ import java.time.LocalDate;
 import code.figueroajose.jugs.ecinco.cinco.DígitosSuma;
 
 public class NúmeroVida {
-
+	
 	public static int númeroVida(LocalDate fecha) {
+
+		return digitoSuma(fecha.getYear() + fecha.getMonthValue() + fecha.getDayOfMonth());
+
+	}
+
+	public static int númeroVidav1(LocalDate fecha) {
 		var numeroDeVida = 0;
 		var anio = fecha.getYear();
 		var mes = fecha.getMonthValue();

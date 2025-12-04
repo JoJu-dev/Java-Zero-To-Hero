@@ -2,6 +2,22 @@ package code.figueroajose.jugs.ecinco.nueve;
 
 public class PatronAjedrez {
 
+	// Recomendado
+	String patrónAjedrez(int tamaño) {
+		var builder = new StringBuilder();
+		
+		for (var fila = 1; fila < tamaño; ++fila) {
+			var c = esPar(fila) ? '.' : '*';
+			for (var columna = 1; columna < tamaño; ++columna) {
+				builder.append(c);
+				c = (c == '*') ? '.' : '*';
+			}
+		}
+
+		return builder.toString();
+
+	}
+ //Versión 1 para didáctica.
 	public static String patronAjedrez(int tamanio) {
 		var builder = new StringBuilder();
 		var patronAjedrez = "";
@@ -67,11 +83,5 @@ public class PatronAjedrez {
 		var builder = new StringBuilder();
 		builder.append("\n");
 		return builder.toString();
-		// existe diferencia entre usar System.lineSeparator() y \'"\n"\'
-		// System.lineSeparator(): depende sel S.O en linux ="\n" y windows: \r\n
-		// "\n" en windows
-		// Esto afecto cuando ejecute el test porque el tipo de espacio era diferente;
-		// al usar el método lineSeparator() esto causo que el resultado del test fuese
-		// error
 	}
 }
