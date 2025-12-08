@@ -9,11 +9,6 @@ public class EsPrimo {
 
 	}
 
-	private static boolean esMultiplo(int a, int b) {
-
-		return (a % b) == 0;
-	}
-
 	private static boolean esMúltiplo(int a, int b) {
 
 		return (a % b) == 0;
