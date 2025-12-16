@@ -7,8 +7,8 @@ public class Únicos {
 		var valorAComparar = 0;
 		var valorComparador = 0;
 
-		for (var pivote = 0; pivote < cadena.length; ++pivote) {
-			for (var actual = 0; actual < cadena.length; ++actual) {
+		for (var pivote = 0; pivote < cadena.length-1; ++pivote) {
+			for (var actual = pivote + 1; actual < cadena.length; ++actual) {
 				valorComparador = cadena[pivote];
 				valorAComparar = cadena[actual];
 				if ((valorComparador == valorAComparar) && (pivote != actual)) {

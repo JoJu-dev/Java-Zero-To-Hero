@@ -15,4 +15,22 @@ public class Histograma {
 
 		return histograma.toString();
 	}
+	
+	
+	//Usando Repeat, Solución brindada.
+	String histograma_(int[] datos) {
+
+		  var builder = new StringBuilder();
+
+		  for (var e : datos) {
+
+		    builder.append("*".repeat(e));
+
+		    builder.append(System.lineSeparator());
+
+		  }
+
+		  return builder.toString();
+
+		}
 }
