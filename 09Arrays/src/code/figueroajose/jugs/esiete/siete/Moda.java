@@ -6,6 +6,30 @@ public class Moda {
 	// Esta bien que una función ocupe 40 líneas?
 	// por ahora, no se me ocurre otra forma.
 
+	int moda_(int[] elementos) {
+
+		var elementosOrdenados = Arrays.copyOf(elementos, elementos.length);
+		Arrays.sort(elementosOrdenados);
+		var moda = elementosOrdenados[0];
+		var cuentaModa = 1;
+		var actual = elementosOrdenados[0];
+		var cuenta = 1;
+		
+		for (var i = 1; i < elementosOrdenados.length; ++i) {
+			if (elementosOrdenados[i] == actual) {
+				++cuenta;
+			} else {
+				if (cuenta > cuentaModa) {
+					moda = elementosOrdenados[i - 1];
+					cuentaModa = cuenta;
+				}
+				actual = elementosOrdenados[i];
+				cuenta = 1;
+			}
+		}
+		return (cuenta > cuentaModa) ? elementosOrdenados[elementos.length - 1] : moda;
+	}
+
 	public static int moda(int[] arreglo) {
 		var nRepetidos = 0;
 		var nRepetidosTemporal = 0;

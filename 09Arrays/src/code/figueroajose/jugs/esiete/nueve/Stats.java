@@ -1,8 +1,22 @@
 package code.figueroajose.jugs.esiete.nueve;
 
 public class Stats {
+	
+	public static int[] stats(int[] datos) {
 
-	public static int[] stats(int[] arreglo) {
+		  var stats = new int[6];
+
+		  for (var i = 0; i < datos.length; ++i) {
+
+		    ++stats[datos[i]];
+
+		  }
+
+		  return stats;
+
+		}
+
+	public static int[] stats_(int[] arreglo) {
 
 		var vecesRepetidas = 0;
 		var posicion = 0;

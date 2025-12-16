@@ -1,8 +1,56 @@
 package code.figueroajose.jugs.esiete.trece;
 
+import java.util.Arrays;
+
 public class Expandir {
 
-	public static char[][] expandir(char[][] array) {
+	//Solución Recomendada
+	private static char[][] copiar(char[][] original) {
+
+		var copia = new char[original.length][original[0].length];
+		for (var i = 0; i < original.length; ++i) {
+			copia[i] = Arrays.copyOf(original[i], original[i].length);
+		}
+		return copia;
+	}
+
+	private static void marcarFila(char[][] matriz, int fila, char c) {
+
+		for (var j = 0; j < matriz[0].length; ++j) {
+			if (matriz[fila][j] == ' ') {
+				matriz[fila][j] = c;
+			}
+		}
+	}
+
+	private static void marcarColumna(char[][] matriz, int columna, char c) {
+
+		for (var i = 0; i < matriz.length; ++i) {
+			if (matriz[i][columna] == ' ') {
+				matriz[i][columna] = c;
+			}
+		}
+	}
+
+	public static char[][] expandir(char[][] matriz) {
+		var copia = copiar(matriz);
+		var c = '.';
+
+		for (var i = 0; i < matriz.length; ++i) {
+			for (var j = 0; j < matriz[i].length; ++j) {
+				if (matriz[i][j] == '*') {
+					marcarColumna(copia,  j, c);
+					marcarFila(copia, i, c);
+				}
+			}
+		}
+
+		return copia;
+	}
+
+
+    //primeras verisión 
+	public static char[][] expandir_(char[][] array) {
 
 		var pivotetemporal = -1;
 		var actualTemporal = -1;
