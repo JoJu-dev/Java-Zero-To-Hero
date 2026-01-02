@@ -15,11 +15,8 @@ public class LongitudTest {
 		
 		assertAll(
 				() -> assertEquals(measure,new Longitud(measure).medida(), 0.0), 
-				() -> assertEquals(new Longitud(3.0).medida(), new Longitud(1.0).sumar(new Longitud(2.0)),0.0),
-				() -> assertEquals(new Longitud(3.25).medida(),new Longitud(0.75).sumar(new Longitud(2.50)),0.0)
-				);
-		
-		
-		
+				() -> assertEquals(new Longitud(3.0), new Longitud(1.0).sumar(new Longitud(2.0)),"0.0"),
+				() -> assertEquals(new Longitud(3.25),new Longitud(0.75).sumar(new Longitud(2.50)),"0.0")
+				);		
 	}
 }

@@ -12,8 +12,8 @@ public class Longitud {
 		return this.medida;
 	}
 	
-	public Longitude sumar(Longitud otra) {
-		return new Longitud(this.medida + otra)
+	public Longitud sumar(Longitud otra) {
+		return new Longitud(this.medida + otra.medida);
 	}
 	
 	public boolean equals(Object otro) {
